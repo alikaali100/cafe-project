@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.contrib.auth.views import LoginView
+from .forms import PhoneNumberAuthenticationForm
 
-# Create your views here.
+class PhoneNumberLoginView(LoginView):
+    form_class = PhoneNumberAuthenticationForm
+    template_name = 'login.html'  # ایجاد این تمپلیت را فراموش نکنید
