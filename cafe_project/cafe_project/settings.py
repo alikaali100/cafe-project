@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cafe_app'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'cafe_app.Staff'
+AUTHENTICATION_BACKENDS = [
+    'cafe_app.backends.PhoneNumberBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
